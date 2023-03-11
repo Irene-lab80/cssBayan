@@ -1,0 +1,25 @@
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.accordion {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+.panel {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+
+.panel-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: grey;
+  font-weight: bold;
+  cursor: pointer;
+}
