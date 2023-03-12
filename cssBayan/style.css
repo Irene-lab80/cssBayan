@@ -27,10 +27,14 @@ input {
   transition: all 1s;
 }
 
-img {
+.img {
   transition: all 1s;
   width: 0;
   max-width: 600px;
+}
+
+.icon {
+  transform: rotate(-90deg);
 }
 
 .container {
@@ -81,12 +85,12 @@ img {
   padding: 1em;
 }
 
-.panel:hover .panel-label::after {
-  transform: rotate(90deg);
+
+.panel:hover .icon {
+  transform: none;
 }
 
-.panel-label::after {
-  content: "\276F";
+.icon {
   width: 1em;
   height: 1em;
   text-align: center;
@@ -108,8 +112,8 @@ input:checked+.panel-label {
   color: var(--color-panel);
 }
 
-input:checked+.panel-label::after {
-  transform: rotate(90deg);
+input:checked+.icon {
+  transform: none;
 }
 
 input:checked~.panel-content {
