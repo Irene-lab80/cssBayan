@@ -1,0 +1,138 @@
+:root {
+  --color-dark: #353535;
+  --color-panel: #d9d9d9;
+  --color-light: #ccc5b9;
+  --color-accent-hover: #f0c768;
+  --color-accent: #3c6e71;
+}
+
+body {
+  color: var(--color-light);
+  background: var(--color-dark);
+  padding: 0 1em 1em;
+  transition: all 1s;
+  font-size: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.img {
+  transition: all 1s;
+  width: 0;
+  max-width: 600px;
+}
+
+.icon {
+  transform: rotate(-90deg);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.accordion {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  transition: all 0.6s;
+}
+
+.panel {
+  width: 100%;
+  color: var(--color-dark);
+  overflow: hidden;
+  transition: all 0.6s;
+}
+
+.panel:not(:last-child) {
+  border-bottom: 1px solid var(--color-dark);
+}
+
+.panel-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: var(--color-light);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.panel:hover .panel-label {
+  background: var(--color-accent-hover);
+  color: var(--color-dark);
+  transition: all 0.6s;
+}
+
+.panel:hover .img {
+  width: 100%;
+}
+
+.panel:hover .panel-content {
+  max-height: fit-content;
+  padding: 1em;
+}
+
+
+.panel:hover .icon {
+  transform: none;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.panel-content {
+  max-height: 0;
+  padding: 0 1em;
+  color: var(--color-dark);
+  background: var(--color-light);
+  transition: all 1s;
+  cursor: pointer;
+  text-align: center;
+}
+
+input:checked+.panel-label {
+  background: var(--color-accent);
+  color: var(--color-panel);
+}
+
+input:checked+.icon {
+  transform: none;
+}
+
+input:checked~.panel-content {
+  max-height: fit-content;
+  padding: 1em;
+}
+
+input:checked~.panel-content .img {
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 1rem;
+  }
+}
